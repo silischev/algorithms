@@ -1,0 +1,71 @@
+INPUT              OUTPUT
+12        =>       10
+30                 00
+
+------------------------
+
+123                003
+406       =>       000
+089                000
+
+------------------------
+
+123                103
+406       =>       000
+789                709
+
+Steps:
+0 - [1][1]
+
+4 - [1][0]
+0 - [1][1]
+6 - [1][2]
+
+2 - [0][1]
+0 - [1][1]
+8 - [2][1]
+
+************************
+
+data     = [2][2]int{}
+markedCols = hastable([int]struct{})
+markedRows = hastable([int]struct{})
+
+row = 0
+col = 0
+FOR col < len(data)
+    IF col EXISTS in markedCols
+        col++
+        continue
+    ENDIF
+
+    FOR row < len(data)
+        IF row EXISTS in markedRows
+            row++
+            continue
+        ENDIF
+
+        curElem = data[row][col]
+
+        IF curElem == 0
+            markedRows[row] = struct{}
+            markedCols[col] = struct{}
+            pos = 0
+            FOR pos < len(data)
+                data[row][pos] = 0
+                pos++
+            ENDFOR
+
+            pos = 0
+            FOR pos < len(data)
+                data[pos][col] = 0
+                pos++
+            ENDFOR
+        ENDIF
+
+        row++
+    ENDFOR
+
+    row = 0
+    col++
+ENDFOR

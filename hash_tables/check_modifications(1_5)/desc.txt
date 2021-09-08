@@ -1,0 +1,46 @@
+INPUT              OUTPUT
+pale, ple           true
+ple, pale           true
+pales, pale         true
+pale, pales         true
+pale, bale          true
+pale, bake          false
+
+s1 = pale
+s2 = ple
+
+IF len(s1) - len(s2) > MOD(1)
+    RETURN false
+ELSE IF len(s1) == len(s2) && s1[0] != s2[0]
+    RETURN false
+ENDIF
+
+idx = 0
+hasDiff = false
+FOR s1
+    IF idx >= len(s1) || idx >= len(s2)
+        RETURN true
+    ENDIF
+
+    IF s1[idx] != s2[idx]
+        IF len(s1) == len(s2)
+            IF s1[idx+1] != s2[idx+1] || hasDiff
+                RETURN false
+            ENDIF
+
+            hasDiff = true
+        ENDIF
+
+        IF len(s1) != len(s2)
+            IF len(s1) > len(s2) && s1[idx+1] != s2[idx]
+                RETURN false
+            ELSEIF len(s1) < len(s2) && s1[idx] != s2[idx+1]
+                RETURN false
+            ELSE
+                idx++
+            ENDIF
+        ENDIF
+    ENDIF
+
+    idx++
+ENDFOR

@@ -1,0 +1,25 @@
+s1 = abc
+s2 = cab
+
+IF len(s1) != len(s2)
+   THEN false
+ENDIF
+
+s1LetterCnt = hashtable([letter]count)
+s2LetterCnt = hashtable([letter]count)
+
+FOR letter in s1
+    s1LetterCnt++
+ENDFOR
+
+FOR letter in s2
+    s2LetterCnt++
+ENDFOR
+
+FOR letter in s1
+    IF s1LetterCnt[letter] != s2LetterCnt[letter]
+       THEN false
+    ENDIF
+ENDFOR
+
+RETURN true

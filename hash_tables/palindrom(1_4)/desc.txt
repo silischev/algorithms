@@ -1,0 +1,34 @@
+// INPUT "tact coa"
+// OUTPUT true ("taco cat", "atco cta")
+
+s = tact coa
+
+// 7137 351 => 1133577
+// appa apa azpza apazzzapa (141999141)
+
+letterCnt = hashtable([letter]count)
+
+FOR letter IN s
+    letterCnt[letter]++
+ENDFOR
+
+oddLettersCnt = 0
+FOR letter, val IN letterCnt
+    IF len(s) % 2 != 0
+        IF oddLettersCnt > 1
+            RETURN false
+        ENDIF
+        IF val % 2 != 0 && val > 1
+            RETURN false
+        ENDIF
+        IF val == 1
+            oddLettersCnt++
+        ENDIF
+    ENDIF
+
+    IF len(s) % 2 == 0 && val % 2 != 0
+        RETURN false
+    ENDIF
+ENDFOR
+
+RETURN true
