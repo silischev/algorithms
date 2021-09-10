@@ -4,16 +4,6 @@ import (
 	"fmt"
 )
 
-type linkedList interface {
-	Get(i int) *Node
-	Next() *Node
-	Delete(i int)
-	AddBack(data string)
-	AddFront(data string)
-	Insert(i int, n Node)
-	Put(i int, n Node)
-}
-
 type Node struct {
 	next *Node
 	data string
@@ -26,6 +16,14 @@ type SingleLinkedList struct {
 
 func NewLinkedList() *SingleLinkedList {
 	return &SingleLinkedList{}
+}
+
+func (l *SingleLinkedList) Head() *Node {
+	return l.head
+}
+
+func (n *Node) Next() *Node {
+	return n.next
 }
 
 func (l *SingleLinkedList) Print() {
@@ -69,7 +67,16 @@ func (l *SingleLinkedList) Reverse() {
 	l.head = prev
 }
 
-func (l *SingleLinkedList) ReverseRecursive() {
+func (l *SingleLinkedList) ReverseRecursive(curr, prev *Node) {
+	if curr == nil {
+		l.head = prev
+		return
+	}
+
+	next := curr.next
+	curr.next = prev
+
+	l.ReverseRecursive(next, curr)
 }
 
 func (l *SingleLinkedList) AddFront(data string) {

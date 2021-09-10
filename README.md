@@ -1,2 +1,2 @@
 # algorithms
-Algorithms and data structures study (leetcode and others)
+Algorithms and data structures study

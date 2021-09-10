@@ -15,4 +15,8 @@ func main() {
 	fmt.Println("\n")
 	list.Reverse()
 	list.Print()
+
+	fmt.Println("\n")
+	list.ReverseRecursive(list.Head(), list.Head().Next())
+	list.Print()
 }
