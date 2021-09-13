@@ -22,26 +22,6 @@ func (l *SingleLinkedList) Head() *Node {
 	return l.head
 }
 
-func (l *SingleLinkedList) Length() int {
-	return l.len
-}
-
-func (l *SingleLinkedList) SetLength(len int) {
-	l.len = len
-}
-
-func (n *Node) Next() *Node {
-	return n.next
-}
-
-func (n *Node) SetNext(next *Node) {
-	n.next = next
-}
-
-func (n *Node) Data() string {
-	return n.data
-}
-
 func (l *SingleLinkedList) Print() {
 	currNode := l.head
 	for i := 0; i < l.len; i++ {
@@ -129,4 +109,44 @@ func (l *SingleLinkedList) AddBack(data string) {
 	}
 
 	l.len++
+}
+
+func (l *SingleLinkedList) Delete(data string) {
+	currNode := l.head
+	var prevNode *Node
+
+	for currNode != nil {
+		if currNode.data == data {
+			if prevNode == nil {
+				l.head = currNode.next
+			} else {
+				prevNode.next = currNode.next
+			}
+
+			currNode = nil
+			break
+		}
+
+		prevNode = currNode
+		currNode = currNode.next
+	}
+
+	l.len--
+}
+
+func (l *SingleLinkedList) DeleteDuplicates() {
+	currNode := l.Head()
+	var prevNode *Node
+
+	for currNode != nil {
+		if prevNode != nil && currNode.data == prevNode.data {
+			prevNode.next = currNode.next
+			l.len--
+			currNode = currNode.next
+			continue
+		}
+
+		prevNode = currNode
+		currNode = currNode.next
+	}
 }

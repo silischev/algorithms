@@ -18,23 +18,11 @@ func main() {
 	list.Print()
 	fmt.Println("\n")
 
-	deleteDuplicates(list)
+	list.DeleteDuplicates()
 	list.Print()
-}
 
-func deleteDuplicates(l *realisation.SingleLinkedList) {
-	currNode := l.Head()
-	var prevNode *realisation.Node
-
-	for currNode != nil {
-		if prevNode != nil && currNode.Data() == prevNode.Data() {
-			prevNode.SetNext(currNode.Next())
-			l.SetLength(l.Length() - 1)
-			currNode = currNode.Next()
-			continue
-		}
-
-		prevNode = currNode
-		currNode = currNode.Next()
-	}
+	list.Delete("1")
+	list.Delete("5")
+	fmt.Println("\n")
+	list.Print()
 }
