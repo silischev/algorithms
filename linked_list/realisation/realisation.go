@@ -22,8 +22,24 @@ func (l *SingleLinkedList) Head() *Node {
 	return l.head
 }
 
+func (l *SingleLinkedList) Length() int {
+	return l.len
+}
+
+func (l *SingleLinkedList) SetLength(len int) {
+	l.len = len
+}
+
 func (n *Node) Next() *Node {
 	return n.next
+}
+
+func (n *Node) SetNext(next *Node) {
+	n.next = next
+}
+
+func (n *Node) Data() string {
+	return n.data
 }
 
 func (l *SingleLinkedList) Print() {
