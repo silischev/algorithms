@@ -1,19 +1,20 @@
 package main
 
 import (
-	"linked_list/realisation"
 	"strconv"
+
+	ll "github.com/silischev/algorithms/linked_list/implementation"
 )
 
 func main() {
-	list1 := realisation.NewLinkedList()
+	list1 := ll.NewLinkedList()
 	list1.AddBack("6")
 	list1.AddBack("1")
 	list1.AddBack("3")
 	list1.Print()
 	//fmt.Println("\n")
 
-	list2 := realisation.NewLinkedList()
+	list2 := ll.NewLinkedList()
 	list2.AddBack("2")
 	list2.AddBack("4")
 	list2.Print()
@@ -22,8 +23,8 @@ func main() {
 	sum(list1, list2).Print()
 }
 
-func sum(l1 *realisation.SingleLinkedList, l2 *realisation.SingleLinkedList) *realisation.SingleLinkedList {
-	newList := &realisation.SingleLinkedList{}
+func sum(l1 *ll.SingleLinkedList, l2 *ll.SingleLinkedList) *ll.SingleLinkedList {
+	newList := &ll.SingleLinkedList{}
 
 	currRes := 0
 

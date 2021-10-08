@@ -2,11 +2,12 @@ package main
 
 import (
 	"fmt"
-	"linked_list/realisation"
+
+	"github.com/silischev/algorithms/linked_list/implementation"
 )
 
 func main() {
-	list := realisation.NewLinkedList()
+	list := implementation.NewLinkedList()
 	list.AddBack("1")
 	list.AddBack("2")
 	list.AddBack("3")
@@ -17,6 +18,6 @@ func main() {
 	list.Print()
 
 	fmt.Println("\n")
-	list.ReverseRecursive(list.Head(), list.Head().Next())
+	list.ReverseRecursive(list.Head(), list.Head().GetNext())
 	list.Print()
 }

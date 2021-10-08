@@ -1,4 +1,4 @@
-module linked_list
+module github.com/silischev/algorithms/linked_list
 
 go 1.16
 

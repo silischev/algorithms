@@ -1,15 +1,16 @@
 package main
 
 import (
-	"linked_list/realisation"
 	"testing"
+
+	ll "github.com/silischev/algorithms/linked_list/implementation"
 
 	"github.com/stretchr/testify/assert"
 )
 
 func TestSum1(t *testing.T) {
-	l1 := realisation.NewLinkedList()
-	l2 := realisation.NewLinkedList()
+	l1 := ll.NewLinkedList()
+	l2 := ll.NewLinkedList()
 
 	l1.AddBack("6")
 	l1.AddBack("1")
@@ -21,8 +22,8 @@ func TestSum1(t *testing.T) {
 }
 
 func TestSum2(t *testing.T) {
-	l1 := realisation.NewLinkedList()
-	l2 := realisation.NewLinkedList()
+	l1 := ll.NewLinkedList()
+	l2 := ll.NewLinkedList()
 
 	l1.AddBack("6")
 	l1.AddBack("1")
@@ -34,8 +35,8 @@ func TestSum2(t *testing.T) {
 }
 
 func TestSum3(t *testing.T) {
-	l1 := realisation.NewLinkedList()
-	l2 := realisation.NewLinkedList()
+	l1 := ll.NewLinkedList()
+	l2 := ll.NewLinkedList()
 
 	l1.AddBack("6")
 	l1.AddBack("1")
@@ -46,8 +47,8 @@ func TestSum3(t *testing.T) {
 }
 
 func TestSum4(t *testing.T) {
-	l1 := realisation.NewLinkedList()
-	l2 := realisation.NewLinkedList()
+	l1 := ll.NewLinkedList()
+	l2 := ll.NewLinkedList()
 
 	l1.AddBack("6")
 	l1.AddBack("1")
@@ -59,8 +60,8 @@ func TestSum4(t *testing.T) {
 }
 
 func TestSum5(t *testing.T) {
-	l1 := realisation.NewLinkedList()
-	l2 := realisation.NewLinkedList()
+	l1 := ll.NewLinkedList()
+	l2 := ll.NewLinkedList()
 
 	l1.AddBack("6")
 	l1.AddBack("1")
@@ -72,8 +73,8 @@ func TestSum5(t *testing.T) {
 }
 
 func TestSum6(t *testing.T) {
-	l1 := realisation.NewLinkedList()
-	l2 := realisation.NewLinkedList()
+	l1 := ll.NewLinkedList()
+	l2 := ll.NewLinkedList()
 
 	l1.AddBack("6")
 	l1.AddBack("1")
@@ -85,8 +86,8 @@ func TestSum6(t *testing.T) {
 }
 
 func TestSum7(t *testing.T) {
-	l1 := realisation.NewLinkedList()
-	l2 := realisation.NewLinkedList()
+	l1 := ll.NewLinkedList()
+	l2 := ll.NewLinkedList()
 
 	l1.AddBack("9")
 
@@ -98,8 +99,8 @@ func TestSum7(t *testing.T) {
 }
 
 func TestSum8(t *testing.T) {
-	l1 := realisation.NewLinkedList()
-	l2 := realisation.NewLinkedList()
+	l1 := ll.NewLinkedList()
+	l2 := ll.NewLinkedList()
 
 	l1.AddBack("1")
 
@@ -109,8 +110,8 @@ func TestSum8(t *testing.T) {
 }
 
 func TestSum9(t *testing.T) {
-	l1 := realisation.NewLinkedList()
-	l2 := realisation.NewLinkedList()
+	l1 := ll.NewLinkedList()
+	l2 := ll.NewLinkedList()
 
 	l1.AddBack("7")
 	l1.AddBack("1")
