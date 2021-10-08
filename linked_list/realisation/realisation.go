@@ -9,6 +9,14 @@ type Node struct {
 	data string
 }
 
+func (n *Node) GetData() string {
+	return n.data
+}
+
+func (n *Node) GetNext() *Node {
+	return n.next
+}
+
 type SingleLinkedList struct {
 	len  int
 	head *Node
@@ -20,6 +28,10 @@ func NewLinkedList() *SingleLinkedList {
 
 func (l *SingleLinkedList) Head() *Node {
 	return l.head
+}
+
+func (l *SingleLinkedList) Length() int {
+	return l.len
 }
 
 func (l *SingleLinkedList) Print() {
