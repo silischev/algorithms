@@ -9,6 +9,10 @@ type Node struct {
 	data string
 }
 
+func NewNode(next *Node, data string) *Node {
+	return &Node{next, data}
+}
+
 func (n *Node) GetData() string {
 	return n.data
 }
