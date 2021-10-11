@@ -21,6 +21,14 @@ func (n *Node) GetNext() *Node {
 	return n.next
 }
 
+func (n *Node) SetNext(next *Node) {
+	n.next = next
+}
+
+func (n *Node) SetData(data string) {
+	n.data = data
+}
+
 type SingleLinkedList struct {
 	len  int
 	head *Node
