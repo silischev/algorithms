@@ -8,13 +8,6 @@ import (
 
 var ErrEmptyStack = errors.New("stack is empty")
 
-type Stacker interface {
-	Push(data string)
-	Pop() ll.Node
-	IsEmpty() bool
-	Peek() ll.Node
-}
-
 type Stack struct {
 	Len int
 	Top *ll.Node
@@ -52,4 +45,15 @@ func (s *Stack) Peek() (*ll.Node, error) {
 
 func (s *Stack) isEmpty() bool {
 	return s.Len == 0
+}
+
+func (s *Stack) AsSlice() []string {
+	out := []string{}
+	next := s.Top
+	for next != nil {
+		out = append(out, next.GetData())
+		next = next.GetNext()
+	}
+
+	return out
 }
