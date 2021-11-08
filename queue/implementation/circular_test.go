@@ -43,6 +43,9 @@ func TestEnqueueDequeueCircularQueue(t *testing.T) {
 	require.Equal(t, 0, q.head)
 	require.Equal(t, 2, q.tail)
 
+	err = q.Enqueue("test4")
+	require.Error(t, ErrExceededCircularQueueSize, err)
+
 	data, err := q.Dequeue()
 	require.Nil(t, err)
 	require.Equal(t, "test1", data)

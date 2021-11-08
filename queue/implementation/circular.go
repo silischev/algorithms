@@ -2,7 +2,6 @@ package implementation
 
 import (
 	"errors"
-	"log"
 )
 
 var (
@@ -36,23 +35,7 @@ func (q *CircularQueue) Enqueue(data string) error {
 	return nil
 }
 
-/*func (q *CircularQueue) Enqueue(data string) error {
-	if q.currSize == cap(q.elements) {
-		return ErrExceededCircularQueueSize
-	}
-
-	if q.currSize > 0 {
-		q.tail++
-	}
-
-	q.elements = append(q.elements, data)
-	q.currSize++
-
-	return nil
-}*/
-
 func (q *CircularQueue) Dequeue() (string, error) {
-	log.Println("q.currSize ", q.currSize)
 	if q.currSize == 0 {
 		return "", ErrEmptyCircularQueue
 	}
