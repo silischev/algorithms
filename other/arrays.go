@@ -1,5 +1,21 @@
 package arrays
 
+func maxValueLinearComplexitySimple(data []int) int {
+	maxPricePeriods := 0
+	maxPrice := 0
+
+	for i := len(data) - 1; i >= 0; i-- {
+		price := data[i]
+		if price > maxPricePeriods {
+			maxPricePeriods = price
+		}
+
+		maxPrice += maxPricePeriods
+	}
+
+	return maxPrice
+}
+
 func maxValueLinearComplexity(data []int) int {
 	newPeriodDay := 0
 	maxPricePeriods := 0
